@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CharacterClassController;
+use App\Http\Controllers\CharacterController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,6 +26,8 @@ Route::put('/character-classes/{id}', [CharacterClassController::class, 'update'
 Route::delete('/character-classes/{id}', [CharacterClassController::class, 'destroy']);
 
 //Route::apiResource('character-classes', CharacterClassController::class);
+
+Route::apiResource('/characters', CharacterController::class);
 
 Route::get('/', function () {
     return ['Laravel' => app()->version()];
